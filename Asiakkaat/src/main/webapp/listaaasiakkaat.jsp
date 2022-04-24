@@ -33,7 +33,7 @@
 	</table>
 	<script>
 		$(document).ready(function() {
-
+			
 			haeAsiakkaat();
 			$("#hakunappi").click(function() {
 				haeAsiakkaat();

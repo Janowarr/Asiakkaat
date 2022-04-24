@@ -60,7 +60,7 @@ public class Dao {
 
 	public ArrayList<Asiakas> listaaKaikki(String hakusana) {
 		ArrayList<Asiakas> asiakkaat = new ArrayList<Asiakas>();
-		sql = "SELECT * FROM asiakkaat WHERE etunimi LIKE ? or sukunmi LIKE ? or puhelin LIKE ? or sposti LIKE ?";
+		sql = "SELECT * FROM asiakkaat WHERE etunimi LIKE ? or sukunimi LIKE ? or puhelin LIKE ? or sposti LIKE ?";
 		try {
 			con = yhdista();
 			if (con != null) { // jos yhteys onnistui
@@ -68,6 +68,7 @@ public class Dao {
 				stmtPrep.setString(1, "%" + hakusana + "%");
 				stmtPrep.setString(2, "%" + hakusana + "%");
 				stmtPrep.setString(3, "%" + hakusana + "%");
+				stmtPrep.setString(4, "%" + hakusana + "%");
 				rs = stmtPrep.executeQuery();
 				if (rs != null) { // jos kysely onnistui
 					// con.close();
