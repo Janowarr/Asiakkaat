@@ -1,0 +1,5 @@
+127.0.0.1 - - [24/Apr/2022:16:58:25 +0300] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [24/Apr/2022:16:58:26 +0300] "GET /Asiakkaat/asiakkaat/* HTTP/1.1" 200 287
+0:0:0:0:0:0:0:1 - - [24/Apr/2022:17:01:23 +0300] "GET /Asiakkaat/listaaasiakkaat.jsp HTTP/1.1" 200 1694
+0:0:0:0:0:0:0:1 - - [24/Apr/2022:17:01:23 +0300] "GET /Asiakkaat/asiakkaat/ HTTP/1.1" 200 287
+0:0:0:0:0:0:0:1 - - [24/Apr/2022:17:01:28 +0300] "GET /Asiakkaat/asiakkaat/Matti HTTP/1.1" 200 287

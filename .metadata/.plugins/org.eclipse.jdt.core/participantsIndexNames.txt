@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\Users\Janowar\Desktop\koulu\AMK\Ohjelmointi 2\Tehtavat\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2025001041.index
+\Asiakkaat\src\main\java
