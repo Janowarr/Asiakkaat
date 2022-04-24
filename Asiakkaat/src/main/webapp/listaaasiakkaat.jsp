@@ -8,8 +8,30 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Asiakkaat</title>
 <style>
-.oikealle {
-	text-align: right;
+#listaus{
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+}
+
+#listaus td, #listaus th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#listaus tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#listaus tr:hover {
+	background-color: #ddd;
+}
+
+#listaus th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
 }
 </style>
 </head>
@@ -17,8 +39,8 @@
 	<table id="listaus">
 		<thead>
 			<tr>
-				<th class="oikealle">Hakusana:</th>
-				<th colspan="2"><input type="text" id="hakusana"></th>
+				<th colspan="2">Hakusana:</th>
+				<th><input type="text" id="hakusana"></th>
 				<th><input type="button" value="hae" id="hakunappi"></th>
 			</tr>
 			<tr>
@@ -33,7 +55,7 @@
 	</table>
 	<script>
 		$(document).ready(function() {
-			
+
 			haeAsiakkaat();
 			$("#hakunappi").click(function() {
 				haeAsiakkaat();
