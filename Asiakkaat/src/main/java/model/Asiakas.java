@@ -3,9 +3,9 @@ package model;
 public class Asiakas {
 	private int asiakas_id;
 	private String etunimi, sukunimi, puhelin, sposti;
-	
 	public Asiakas() {
-		super();		
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	public Asiakas(int asiakas_id, String etunimi, String sukunimi, String puhelin, String sposti) {
 		super();
@@ -14,19 +14,13 @@ public class Asiakas {
 		this.sukunimi = sukunimi;
 		this.puhelin = puhelin;
 		this.sposti = sposti;
-}
+	}
 	public int getAsiakas_id() {
 		return asiakas_id;
 	}
 	public void setAsiakas_id(int asiakas_id) {
 		this.asiakas_id = asiakas_id;
 	}
-	@Override
-	public String toString() {
-		return "Asiakas [asiakas_id=" + asiakas_id + ", etunimi=" + etunimi + ", sukunimi=" + sukunimi + ", puhelin="
-				+ puhelin + ", sposti=" + sposti + "]";
-	}
-
 	public String getEtunimi() {
 		return etunimi;
 	}
@@ -51,4 +45,10 @@ public class Asiakas {
 	public void setSposti(String sposti) {
 		this.sposti = sposti;
 	}
+	@Override
+	public String toString() {
+		return "Asiakas [asiakas_id=" + asiakas_id + ", etunimi=" + etunimi + ", sukunimi=" + sukunimi + ", puhelin="
+				+ puhelin + ", sposti=" + sposti + "]";
+	}
+	
 }
