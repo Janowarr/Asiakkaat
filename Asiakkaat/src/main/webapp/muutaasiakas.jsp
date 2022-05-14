@@ -14,7 +14,7 @@
 </head>
 <body>
 	<form id="tiedot">
-		<table>
+		<table class="table">
 			<thead>
 				<tr>
 					<th colspan="5" class="oikealle"><span id="takaisin">Takaisin
@@ -25,19 +25,20 @@
 					<th>Sukunimi</th>
 					<th>Puhelin</th>
 					<th>Sposti</th>
-					<th></th>
+					<th>Hallinta</th>
 				</tr>
 			</thead>
-			<tbody>
 				<tr>
 					<td><input type="text" name="etunimi" id="etunimi"></td>
 					<td><input type="text" name="sukunimi" id="sukunimi"></td>
 					<td><input type="text" name="puhelin" id="puhelin"></td>
 					<td><input type="text" name="sposti" id="sposti"></td>
-					<td><input type="submit" id="tallenna" value="Hyväksy"></td>
+					<td><input type="submit" id="tallenna" value="Tallenna"></td>
 				</tr>
+			<tbody>
 			</tbody>
 		</table>
+		<input type="hidden" name="asiakas_id" id="asiakas_id">
 	</form>
 	<span id="ilmo"></span>
 </body>
@@ -46,16 +47,20 @@
 		$("#takaisin").click(function() {
 			document.location = "listaaasiakkaat.jsp";
 		});
+		
+		$("#etunimi").focus();
+		
 		var asiakas_id = requestURLParam("asiakas_id");
 		$.ajax({
-			url : "asiakkaat/haeyksi/" + asiakas_id,
-			type : "GET",
-			dataType : "json",
-			success : function(result) {
+			url:"asiakkaat/haeyksi/"+asiakas_id,
+			type:"GET",
+			dataType:"json",
+			success:function(result) {
 				$("#etunimi").val(result.etunimi);
 				$("#sukunimi").val(result.sukunimi);
 				$("#puhelin").val(result.puhelin);
 				$("#sposti").val(result.sposti);
+				$("#asiakas_id").val(result.asiakas_id);
 			}
 		});
 		$("#tiedot").validate({
@@ -106,13 +111,11 @@
 			url : "asiakkaat",
 			data : formJsonStr,
 			type : "PUT",
-			dataType : "json",
 			success : function(result) { //result on joko {"response:1"} tai {"response:0"}       
 				if (result.response == 0) {
 					$("#ilmo").html("Asiakkaan päivittäminen epäonnistui.");
 				} else if (result.response == 1) {
 					$("#ilmo").html("Asiakkaan päivittäminen onnistui.");
-					$("#etunimi", "#sukunimi", "#puhelin", "#sposti").val("");
 				}
 			}
 		});
